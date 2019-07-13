@@ -1,0 +1,13 @@
+<%= link_to "Volver", todos_path, class: 'btn btn-info' %>
+<h1>Editar Todo</h1>
+
+<%= form_with model: @todo, local: true  do |t| %>
+
+    <div class="form-group">
+        <%=t.label :description, "Descripcion" %>
+        <%=t.text_field :description, class: 'form-control'%>
+    </div>
+
+    <%=t.submit "Guardar tarea", class: 'btn btn-primary' %>
+
+<% end %>

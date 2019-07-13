@@ -1,0 +1,27 @@
+<%= link_to "Agregar nueva tarea", todos_new_path, class: 'btn btn-success float-right' %>
+<h1>ToDo!</h1>
+<%= link_to "Ver Listado", todos_list_path, class: 'btn btn-info' %>
+<br>
+
+<% @todos.each do |task| %>
+<div class="card card-body bg-light">
+    <%=task.description %>
+    <div class=" btn-group " role="group" style="width: 100px">
+
+        <%= link_to 'Ver', task, class: 'btn btn-info' %>
+        <%= link_to 'Editar', todo_edit_path(task), class: 'btn btn-warning' %>
+        <%= link_to 'Eliminar', task, method: :delete,  class: 'btn btn-danger' %>
+    </div>
+    <br>
+    <% if task.completed == true %> 
+        <div>Realizada</div>
+        <% else %> 
+        <div>Pendiente</div>
+        <%= link_to 'Hecho', completar_path(task),  class: 'btn btn-success right' %>
+    <%end%>
+</div>
+
+<% end %>
+
+
+<!-- <%=  %>  -->
