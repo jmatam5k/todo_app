@@ -1,7 +1,7 @@
 <%= link_to "Volver", todos_path, class: 'btn btn-info' %>
 <h1>Nuevo Todo</h1>
 <% @todo.errors.full_messages.each do |message| %>
-    <div class="be-re-white">
+    <div class="bg-danger text-white" style="width: 200px">
         *<%= message %>
     </div>
    <% end %> 
