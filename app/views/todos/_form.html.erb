@@ -1,5 +1,10 @@
 <%= link_to "Volver", todos_path, class: 'btn btn-info' %>
 <h1>Nuevo Todo</h1>
+<% @todo.errors.full_messages.each do |message| %>
+    <div class="be-re-white">
+        *<%= message %>
+    </div>
+   <% end %> 
 
 <%= form_with model: @todo, local: true  do |t| %>
 
